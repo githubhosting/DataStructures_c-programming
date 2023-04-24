@@ -1,4 +1,4 @@
-// Circular queue implementation using structure in C Programming
+// Circular Queue implementation using structure in C Programming
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,4 +1,5 @@
 // C Program to evaluate value of a postfix expression using stack
+
 #include <stdio.h>
 int stack[20];
 int top = -1;
@@ -25,7 +26,7 @@ int main()
     {
         if (isdigit(*e))
         {
-            num = *e - 48;
+            num = *e - 48; // converting char to int
             push(num);
         }
         else

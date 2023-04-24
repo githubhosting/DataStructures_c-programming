@@ -1,3 +1,5 @@
+// Linked Representation of Queue in C Programming
+
 #include <stdio.h>
 #include <conio.h>
 #include <malloc.h>
@@ -11,12 +13,14 @@ struct queue
     struct node *front;
     struct node *rear;
 };
+
 struct queue *q;
 void create_queue(struct queue *);
 struct queue *insert(struct queue *, int);
 struct queue *delete_element(struct queue *);
 struct queue *display(struct queue *);
 int peek(struct queue *);
+
 int main()
 {
     int val, option;

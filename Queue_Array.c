@@ -1,4 +1,4 @@
-// Queue in Data Structure | queue implementation using array in c
+// Queue in Data Structure | Queue implementation using array in c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,9 +17,9 @@ int main()
     int choice;
     while (1)
     {
-        printf("\n1.Insert element to queue ");
-        printf("\n2.Delete element from queue ");
-        printf("\n3.Display all elements of queue ");
+        printf("\n1.Insert");
+        printf("\n2.Delete");
+        printf("\n3.Display");
         printf("\n4.Quit ");
         printf("\nEnter your choice : ");
         scanf("%d", &choice);
@@ -40,7 +40,7 @@ int main()
             printf("Wrong choice ");
         }
     }
-} /*End of main()*/
+}
 
 void insert()
 {
@@ -56,7 +56,7 @@ void insert()
         rear = rear + 1;
         queue[rear] = add_item;
     }
-} /*End of insert()*/
+}
 
 void delete()
 {
@@ -70,7 +70,7 @@ void delete()
         printf("Element deleted from queue is : %d", queue[front]);
         front = front + 1;
     }
-} /*End of delete() */
+}
 
 void display()
 {
@@ -84,4 +84,4 @@ void display()
             printf("%d ", queue[i]);
         printf("\n");
     }
-} /*End of display() */
+}
