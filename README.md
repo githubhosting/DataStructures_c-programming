@@ -7,7 +7,7 @@
 1. [Dynamic Memory Allocation](#dynamic-memory-allocation)
 2. [Array Operations](#array-operations)
 
-Dynamic Memory Allocation
+#### Dynamic Memory Allocation
 
 ```c
 #include <stdio.h>
@@ -71,7 +71,7 @@ int main()
 }
 ```
 
-Array Operations
+#### Array Operations
 
 ```c
 #include <stdio.h>
