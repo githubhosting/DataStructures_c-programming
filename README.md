@@ -2,12 +2,9 @@
 
 ## This repository contains all the programs of data structure in c programming language
 
-### List of programs
+## List of programs
 
-1. [Dynamic Memory Allocation](#dynamic-memory-allocation)
-2. [Array Operations](#array-operations)
-
-#### Dynamic Memory Allocation
+<details><summary><b>Dynamic Memory Allocation</b></summary>
 
 ```c
 #include <stdio.h>
@@ -71,7 +68,9 @@ int main()
 }
 ```
 
-#### Array Operations
+</details>
+
+<details><summary><b>Array Operations</b></summary>
 
 ```c
 #include <stdio.h>
@@ -174,3 +173,5 @@ int main()
     }
 }
 ```
+
+</details>
