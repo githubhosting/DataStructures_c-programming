@@ -8,10 +8,6 @@ int queue[MAX];
 int front = -1;
 int rear = -1;
 
-void insert();
-void delete();
-void display();
-
 void insert()
 {
     int add_item;
@@ -19,7 +15,7 @@ void insert()
         printf("Queue Overflow ");
     else
     {
-        if (front == -1) //If queue is initially empty
+        if (front == -1) // If queue is initially empty
             front = 0;
         printf("Inset the element in queue : ");
         scanf("%d", &add_item);
