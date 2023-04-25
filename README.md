@@ -368,3 +368,226 @@ int main()
 ```
 
 </details>
+
+<details><summary><b>Postfix Evaluation</b></summary>
+
+```c
+int stack[20];
+int top = -1;
+
+void push(int x)
+{
+    stack[++top] = x;
+}
+
+int pop()
+{
+    return stack[top--];
+}
+
+int main()
+{
+    char exp[20];
+    char *e;
+    int n1, n2, n3, num;
+    printf("Enter the expression :: ");
+    scanf("%s", exp);
+    e = exp;
+    while (*e != '\0')
+    {
+        if (isdigit(*e))
+        {
+            num = *e - 48; // converting char to int
+            push(num);
+        }
+        else
+        {
+            n1 = pop();
+            n2 = pop();
+            switch (*e)
+            {
+            case '+':
+            {
+                n3 = n2 + n1;
+                break;
+            }
+            case '-':
+            {
+                n3 = n2 - n1;
+                break;
+            }
+            case '*':
+            {
+                n3 = n2 * n3;
+                break;
+            }
+            case '/':
+            {
+                n3 = n2 / n1;
+                break;
+            }
+            }
+            push(n3);
+        }
+        e++;
+    }
+    printf("\nThe result of expression %s  =  %d\n\n", exp, pop());
+    return 0;
+}
+```
+
+</details>
+
+<details><summary><b>Parentheses Checker</b></summary>
+
+```c
+#include <stdio.h>
+#include <string.h>
+#define MAX 10
+int top = -1;
+int stk[MAX];
+void push(char);
+char pop();
+void main()
+{
+    char exp[MAX], temp;
+    int i, flag = 1;
+    printf("Enter an expression : ");
+    gets(exp);
+    for (i = 0; i < strlen(exp); i++)
+    {
+        if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[')
+            push(exp[i]);
+        if (exp[i] == ')' || exp[i] == '}' || exp[i] == ']')
+            if (top == -1)
+                flag = 0;
+            else
+            {
+                temp = pop();
+                if (exp[i] == ')' && (temp == '{' || temp == '['))
+                    flag = 0;
+                if (exp[i] == '}' && (temp == '(' || temp == '['))
+                    flag = 0;
+                if (exp[i] == ']' && (temp == '(' || temp == '{'))
+                    flag = 0;
+            }
+    }
+    if (top >= 0)
+        flag = 0;
+    if (flag == 1)
+        printf("\n Valid expression");
+    else
+        printf("\n Invalid expression");
+}
+void push(char c)
+{
+    if (top == (MAX - 1))
+        printf("Stack Overflow\n");
+    else
+    {
+        top = top + 1;
+        stk[top] = c;
+    }
+}
+char pop()
+{
+    if (top == -1)
+        printf("\n Stack Underflow");
+    else
+        return (stk[top--]);
+}
+```
+
+</details>
+
+<details><summary><b>Queue using Array</b></summary>
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 5
+
+int queue[MAX];
+int front = -1;
+int rear = -1;
+
+void insert();
+void delete();
+void display();
+
+void insert()
+{
+    int add_item;
+    if (rear == MAX - 1)
+        printf("Queue Overflow ");
+    else
+    {
+        if (front == -1) //If queue is initially empty
+            front = 0;
+        printf("Inset the element in queue : ");
+        scanf("%d", &add_item);
+        rear = rear + 1;
+        queue[rear] = add_item;
+    }
+}
+
+void delete()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("Queue Underflow ");
+        return;
+    }
+    else
+    {
+        printf("Element deleted from queue is : %d", queue[front]);
+        front = front + 1;
+    }
+}
+
+void display()
+{
+    int i;
+    if (front == -1)
+        printf("Queue is empty ");
+    else
+    {
+        printf("Queue is : ");
+        for (i = front; i <= rear; i++)
+            printf("%d ", queue[i]);
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int choice;
+    while (1)
+    {
+        printf("\n1.Insert");
+        printf("\n2.Delete");
+        printf("\n3.Display");
+        printf("\n4.Quit ");
+        printf("\nEnter your choice : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            insert();
+            break;
+        case 2:
+            delete ();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            exit(1);
+        default:
+            printf("Wrong choice ");
+        }
+    }
+}
+```
+
+</details>

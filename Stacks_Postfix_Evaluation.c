@@ -1,6 +1,7 @@
 // C Program to evaluate value of a postfix expression using stack
 
 #include <stdio.h>
+
 int stack[20];
 int top = -1;
 
