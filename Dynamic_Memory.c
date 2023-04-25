@@ -36,7 +36,6 @@ int main()
     }
     else
     {
-
         // Memory has been successfully allocated
         printf("Memory successfully allocated using malloc.\n");
 

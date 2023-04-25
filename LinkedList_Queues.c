@@ -1,7 +1,6 @@
-// Linked Representation of Queue in C Programming
+// Linked Representation of Queue in C Programming From Book
 
 #include <stdio.h>
-#include <conio.h>
 #include <malloc.h>
 struct node
 {
@@ -21,44 +20,6 @@ struct queue *delete_element(struct queue *);
 struct queue *display(struct queue *);
 int peek(struct queue *);
 
-int main()
-{
-    int val, option;
-    create_queue(q);
-    clrscr();
-    do
-    {
-        printf("\n *****MAIN MENU*****");
-        printf("\n 1. INSERT");
-        printf("\n 2. DELETE");
-        printf("\n 3. PEEK");
-        printf("\n 4. DISPLAY");
-        printf("\n 5. EXIT");
-        printf("\n Enter your option : ");
-        scanf("%d", &option);
-        switch (option)
-        {
-        case 1:
-            printf("\n Enter the number to insert in the queue:");
-            scanf("%d", &val);
-            q = insert(q, val);
-            break;
-        case 2:
-            q = delete_element(q);
-            break;
-        case 3:
-            val = peek(q);
-            if (val != -1)
-                printf("\n The value at front of queue is : %d", val);
-            break;
-        case 4:
-            q = display(q);
-            break;
-        }
-    } while (option != 5);
-    getch();
-    return 0;
-}
 void create_queue(struct queue *q)
 {
     q->rear = NULL;
@@ -124,4 +85,42 @@ int peek(struct queue *q)
     }
     else
         return q->front->data;
+}
+
+int main()
+{
+    int val, option;
+    create_queue(q);
+    do
+    {
+        printf("\n *****MAIN MENU*****");
+        printf("\n 1. INSERT");
+        printf("\n 2. DELETE");
+        printf("\n 3. PEEK");
+        printf("\n 4. DISPLAY");
+        printf("\n 5. EXIT");
+        printf("\n Enter your option : ");
+        scanf("%d", &option);
+        switch (option)
+        {
+        case 1:
+            printf("\n Enter the number to insert in the queue:");
+            scanf("%d", &val);
+            q = insert(q, val);
+            break;
+        case 2:
+            q = delete_element(q);
+            break;
+        case 3:
+            val = peek(q);
+            if (val != -1)
+                printf("\n The value at front of queue is : %d", val);
+            break;
+        case 4:
+            q = display(q);
+            break;
+        }
+    } while (option != 5);
+    getch();
+    return 0;
 }

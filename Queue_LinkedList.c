@@ -1,4 +1,4 @@
-// Code for implementing queue using linked list in C
+// Code for implementing Queue using Linked List in C
 
 #include <stdio.h>
 #include <stdlib.h>
