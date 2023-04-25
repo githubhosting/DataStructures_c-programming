@@ -36,15 +36,15 @@ struct node *create_ll(struct node *start)
         if (start == NULL)
         {
             new_node->next = NULL;
-            start = new_node;
+            start = new_node; // start will get the address of the first node
         }
         else
         {
-            ptr = start;
-            while (ptr->next != NULL)
-                ptr = ptr->next;
-            ptr->next = new_node;
-            new_node->next = NULL;
+            ptr = start;              // ptr will get the address of the first node by start
+            while (ptr->next != NULL) // traverse till the last node
+                ptr = ptr->next;      // ptr will get the address of the last node
+            ptr->next = new_node;     // last node will point to the new node
+            new_node->next = NULL;    // new node will point to NULL
         }
         printf("\n Enter the data: ");
         scanf("%d", &num);
@@ -71,8 +71,8 @@ struct node *insert_beg(struct node *start)
     scanf("%d", &num);
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
-    new_node->next = start;
-    start = new_node;
+    new_node->next = start; // new node will point to the first node
+    start = new_node;       // new node will become the first node(start)
     return start;
 }
 struct node *insert_end(struct node *start)
@@ -83,7 +83,7 @@ struct node *insert_end(struct node *start)
     scanf("%d", &num);
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
-    new_node->next = NULL;
+    new_node->next = NULL; // last node link will be NULL
     ptr = start;
     while (ptr->next != NULL)
         ptr = ptr->next;
@@ -94,14 +94,17 @@ struct node *insert_before(struct node *start)
 {
     struct node *new_node, *ptr, *preptr;
     int num, val;
+
     printf("\n Enter the data: ");
     scanf("%d", &num);
+
     printf("\n Enter the value before which the data has to be inserted: ");
     scanf("%d", &val);
+
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
     ptr = start;
-    while (ptr->data != val)
+    while (ptr->data != val) // traverse till the node before the node to be inserted
     {
         preptr = ptr;
         ptr = ptr->next;
