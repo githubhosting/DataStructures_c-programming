@@ -51,6 +51,7 @@ struct node *display(struct node *start)
 {
     struct node *ptr;
     ptr = start;
+    printf("\n The linked list is:");
     while (ptr->next != start)
     {
         printf("\t %d", ptr->data);
