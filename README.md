@@ -2,6 +2,8 @@
 
 ## This repository contains all the programs of data structure in c programming language
 
+---
+
 ## List of programs
 
 <details><summary><b>Dynamic Memory Allocation</b></summary>
@@ -698,3 +700,7 @@ int main()
 ```
 
 </details>
+
+---
+
+## Credits to [Reema Thareja Book](https://drive.google.com/file/d/1wtduI3P1X3EmPdMr3eVm8VRAkRq83NUX/view?usp=share_link)

@@ -2,14 +2,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <malloc.h>
 struct stack
 {
     int data;
     struct stack *next;
 };
-struct stack *top = NULL;
+struct stack *top = NULL; // Global pointer
 struct stack *push(struct stack *, int);
 struct stack *display(struct stack *);
 struct stack *pop(struct stack *);
@@ -22,12 +21,12 @@ struct stack *push(struct stack *top, int val)
     if (top == NULL)
     {
         ptr->next = NULL;
-        top = ptr;
+        top = ptr; // top is pointing to the first element of the stack
     }
     else
     {
-        ptr->next = top;
-        top = ptr;
+        ptr->next = top; // ptr is pointing to the previous element of the stack
+        top = ptr; // top is pointing to the new element of the stack
     }
     return top;
 }
@@ -39,11 +38,13 @@ struct stack *display(struct stack *top)
         printf("\n STACK IS EMPTY");
     else
     {
+        printf("\n STACK IS: ");
         while (ptr != NULL)
         {
-            printf("\n %d", ptr->data);
+            printf("\t %d", ptr->data);
             ptr = ptr->next;
         }
+        printf("\n");
     }
     return top;
 }
