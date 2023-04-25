@@ -22,7 +22,7 @@ struct node *create_cll(struct node *start)
 {
     struct node *new_node, *ptr;
     int num;
-    printf("\n Enter –1 to end");
+    printf("\n Enter -1 to end");
     printf("\n Enter the data : ");
     scanf("%d", &num);
     while (num != -1)

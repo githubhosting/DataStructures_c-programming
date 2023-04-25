@@ -1,4 +1,4 @@
-// Enter the infix expression to convert to postfix expression
+// Enter the infix expression to convert to prefix expression
 // Write a C program to convert and print a given valid parenthesized
 // infix arithmetic expression to postfix expression. The expression
 // consists of single-character operands and binary operators + - * /.
@@ -36,12 +36,44 @@ int priority(char x)
     return 0;
 }
 
+void reverse (char *exp)
+{
+
+  int size = strlen(exp);
+  int j = size, i = 0;
+  char temp[size];
+
+  temp[j--] = '\0';
+  while (exp[i] != '\0')
+    {
+      temp[j] = exp[i];
+      j--;
+      i++;
+    }
+  strcpy (exp, temp);
+}
+
+void brackets (char *exp)
+{
+  int i = 0;
+  while (exp[i] != '\0')
+    {
+      if (exp[i] == '(')
+	exp[i] = ')';
+      else if (exp[i] == ')')
+	exp[i] = '(';
+      i++;
+    }
+}
+
 int main()
 {
     char exp[100];
     char *e, x;
     printf("Enter the expression : ");
     scanf("%s", exp);
+    reverse(exp);
+    brackets(exp);
     printf("\n");
     e = exp; // e is a pointer to expression
 
@@ -58,7 +90,7 @@ int main()
         }
         else
         {
-            while (priority(stack[top]) >= priority(*e)) // pop until priority of stack top is less than that of *e
+            while (priority(stack[top]) >= priority(*e))
                 printf("%c ", pop());
             push(*e);
         }
@@ -67,7 +99,8 @@ int main()
 
     while (top != -1)
     {
-        printf("%c ", pop()); // pop until stack is empty
+        printf("%c ", pop());
     }
+    printf("\n");
     return 0;
 }

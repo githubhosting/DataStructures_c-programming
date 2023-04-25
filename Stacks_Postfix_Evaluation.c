@@ -56,6 +56,11 @@ int main()
                 n3 = n2 / n1;
                 break;
             }
+            case '^':
+            {
+                n3 = n2 ^ n1;
+                break;
+            }
             }
             push(n3);
         }
