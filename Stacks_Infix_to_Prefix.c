@@ -36,33 +36,33 @@ int priority(char x)
     return 0;
 }
 
-void reverse (char *exp)
+void reverse(char *exp)
 {
 
-  int size = strlen(exp);
-  int j = size, i = 0;
-  char temp[size];
+    int size = strlen(exp);
+    int j = size, i = 0;
+    char temp[size];
 
-  temp[j--] = '\0';
-  while (exp[i] != '\0')
+    temp[j--] = '\0';
+    while (exp[i] != '\0')
     {
-      temp[j] = exp[i];
-      j--;
-      i++;
+        temp[j] = exp[i];
+        j--;
+        i++;
     }
-  strcpy (exp, temp);
+    strcpy(exp, temp);
 }
 
-void brackets (char *exp)
+void brackets(char *exp)
 {
-  int i = 0;
-  while (exp[i] != '\0')
+    int i = 0;
+    while (exp[i] != '\0')
     {
-      if (exp[i] == '(')
-	exp[i] = ')';
-      else if (exp[i] == ')')
-	exp[i] = '(';
-      i++;
+        if (exp[i] == '(')
+            exp[i] = ')';
+        else if (exp[i] == ')')
+            exp[i] = '(';
+        i++;
     }
 }
 
