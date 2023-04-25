@@ -23,8 +23,12 @@ void add_node(int value)
 void delete_node()
 {
     struct node *temp = head;
-    head = head->next;
-    free(temp);
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
 }
 
 void add_at_beginning(int value)
@@ -101,7 +105,7 @@ int main()
         printf("\n 3. Add a node after a given node");
         printf("\n 4. Add a node before a given node");
         printf("\n 5. Add a node at the end");
-        printf("\n 6. Delete a node");
+        printf("\n 6. Delete Last node");
         printf("\n 7. Display the list");
         printf("\n 8. Exit");
         printf("\n Enter your choice: ");
