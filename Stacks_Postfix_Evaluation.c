@@ -37,7 +37,7 @@ int main()
             {
             case '+':
             {
-                n3 = n1 + n2;
+                n3 = n2 + n1;
                 break;
             }
             case '-':
@@ -47,7 +47,7 @@ int main()
             }
             case '*':
             {
-                n3 = n1 * n2;
+                n3 = n2 * n3;
                 break;
             }
             case '/':

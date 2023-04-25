@@ -12,36 +12,6 @@ void insert();
 void delete();
 void display();
 
-int main()
-{
-    int choice;
-    while (1)
-    {
-        printf("\n1.Insert");
-        printf("\n2.Delete");
-        printf("\n3.Display");
-        printf("\n4.Quit ");
-        printf("\nEnter your choice : ");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            insert();
-            break;
-        case 2:
-            delete ();
-            break;
-        case 3:
-            display();
-            break;
-        case 4:
-            exit(1);
-        default:
-            printf("Wrong choice ");
-        }
-    }
-}
-
 void insert()
 {
     int add_item;
@@ -49,7 +19,7 @@ void insert()
         printf("Queue Overflow ");
     else
     {
-        if (front == -1) /*If queue is initially empty */
+        if (front == -1) //If queue is initially empty
             front = 0;
         printf("Inset the element in queue : ");
         scanf("%d", &add_item);
@@ -83,5 +53,35 @@ void display()
         for (i = front; i <= rear; i++)
             printf("%d ", queue[i]);
         printf("\n");
+    }
+}
+
+int main()
+{
+    int choice;
+    while (1)
+    {
+        printf("\n1.Insert");
+        printf("\n2.Delete");
+        printf("\n3.Display");
+        printf("\n4.Quit ");
+        printf("\nEnter your choice : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            insert();
+            break;
+        case 2:
+            delete ();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            exit(1);
+        default:
+            printf("Wrong choice ");
+        }
     }
 }

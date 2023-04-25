@@ -5,17 +5,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node
+struct node
 {
     int data;
-    struct Node *next;
+    struct node *next;
 };
 
-struct Node *head = NULL;
+struct node *head = NULL;
 
 void add_node(int value)
 {
-    struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
+    struct node *new_node;
+    new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = value;
     new_node->next = head;
     head = new_node;
@@ -23,7 +24,8 @@ void add_node(int value)
 
 void print_list()
 {
-    struct Node *current = head;
+    struct node *current = head;
+    printf("\n The linked list is:");
     while (current != NULL)
     {
         printf("%d ", current->data);
