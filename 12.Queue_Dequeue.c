@@ -109,7 +109,7 @@ void insert_right()
     else
     {
         if (right == MAX - 1) // right is at last position of queue
-            right = 0;
+            right = 0; // so we reset it to first position
         else
             right = right + 1;
     }

@@ -118,6 +118,7 @@ void display()
         {
             for (i = front; i < MAX; i++)
                 printf("\t %d", queue[i]);
+                
             for (i = 0; i <= rear; i++)
                 printf("\t %d", queue[i]);
         }

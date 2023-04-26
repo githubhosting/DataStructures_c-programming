@@ -56,7 +56,7 @@ struct node *display(struct node *start)
 {
     struct node *ptr;
     ptr = start;
-    printf("\n The linked list is:");
+    printf("\n The Singly linked list is:");
     while (ptr != NULL)
     {
         printf("\t % d", ptr->data);

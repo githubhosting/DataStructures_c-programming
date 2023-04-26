@@ -40,7 +40,7 @@ struct node *create_cll(struct node *start)
             while (ptr->next != start)
                 ptr = ptr->next;
             ptr->next = new_node;
-            new_node->next = start;
+            new_node->next = start; // new node will point to the first node
         }
         printf("\n Enter the data : ");
         scanf("%d", &num);
@@ -51,7 +51,7 @@ struct node *display(struct node *start)
 {
     struct node *ptr;
     ptr = start;
-    printf("\n The linked list is:");
+    printf("\n The Circular linked list is: ");
     while (ptr->next != start)
     {
         printf("\t %d", ptr->data);
