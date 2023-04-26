@@ -38,11 +38,9 @@ int priority(char x)
 
 void reverse(char *exp)
 {
-
     int size = strlen(exp);
     int j = size, i = 0;
     char temp[size];
-
     temp[j--] = '\0';
     while (exp[i] != '\0')
     {
