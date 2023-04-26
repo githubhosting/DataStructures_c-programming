@@ -72,8 +72,8 @@ struct node *insert_beg(struct node *start)
     scanf("%d", &num);
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
-    new_node->next = start; // new node will point to the first node
-    start = new_node;       // new node will become the first node(start)
+    new_node->next = start; // new node will have the address of the first node
+    start = new_node;       // start is shifted to the new node
     return start;
 }
 struct node *insert_end(struct node *start)
@@ -84,10 +84,10 @@ struct node *insert_end(struct node *start)
     scanf("%d", &num);
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
-    new_node->next = NULL; // last node link will be NULL
+    new_node->next = NULL;
     ptr = start;
     while (ptr->next != NULL)
-        ptr = ptr->next;
+        ptr = ptr->next; // ptr points to last node
     ptr->next = new_node;
     return start;
 }
@@ -107,11 +107,11 @@ struct node *insert_before(struct node *start)
     ptr = start;
     while (ptr->data != val) // traverse till the node before the node to be inserted
     {
-        preptr = ptr;
-        ptr = ptr->next;
+        preptr = ptr; // preptr will point to the node left to the new node
+        ptr = ptr->next; // ptr will point to the node next to the node to be inserted
     }
-    preptr->next = new_node;
-    new_node->next = ptr;
+    preptr->next = new_node; // previous to new node will get the address of the new node
+    new_node->next = ptr; // new node will have the address of right node
     return start;
 }
 struct node *insert_after(struct node *start)
@@ -125,7 +125,7 @@ struct node *insert_after(struct node *start)
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = num;
     ptr = start;
-    preptr = ptr;
+    preptr = ptr; // preptr will point to the ptr
     while (preptr->data != val)
     {
         preptr = ptr;

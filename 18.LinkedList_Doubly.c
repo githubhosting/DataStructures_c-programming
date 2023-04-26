@@ -37,17 +37,17 @@ struct node *create_ll(struct node *start)
             new_node->prev = NULL;
             new_node->data = num;
             new_node->next = NULL;
-            start = new_node;
+            start = new_node; // start is pointing to the first node
         }
         else
         {
-            ptr = start;
+            ptr = start; // ptr will get thr address of the first node
             new_node = (struct node *)malloc(sizeof(struct node));
             new_node->data = num;
             while (ptr->next != NULL)
                 ptr = ptr->next;
-            ptr->next = new_node;
             new_node->prev = ptr;
+            ptr->next = new_node;
             new_node->next = NULL;
         }
         printf("\n Enter the data : ");

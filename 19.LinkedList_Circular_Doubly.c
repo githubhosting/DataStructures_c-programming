@@ -75,12 +75,12 @@ struct node *insert_beg(struct node *start)
     new_node->data = num;
     ptr = start;
     while (ptr->next != start)
-        ptr = ptr->next;
+        ptr = ptr->next; // ptr will point to the last node
     new_node->prev = ptr;
     ptr->next = new_node;
     new_node->next = start;
     start->prev = new_node;
-    start = new_node;
+    start = new_node; // Shifting the start pointer to the new node
     return start;
 }
 struct node *insert_end(struct node *start)

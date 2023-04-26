@@ -101,7 +101,7 @@ void insert_right()
         printf("\n OVERFLOW");
         return;
     }
-    if (left == -1) // if queue is initially empty
+    if (left == -1) // if queue is initially empty, l=r=0
     {
         left = 0;
         right = 0;
