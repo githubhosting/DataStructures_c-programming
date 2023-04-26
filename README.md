@@ -704,3 +704,6 @@ int main()
 ---
 
 ## Credits to [Reema Thareja Book](https://drive.google.com/file/d/1wtduI3P1X3EmPdMr3eVm8VRAkRq83NUX/view?usp=share_link)
+
+---
+If any of the above code is not working or you have a better code to contribute, feel free to create a pull request.
